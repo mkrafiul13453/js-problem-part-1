@@ -1,15 +1,23 @@
-function oddAvarage(numbers){
+function oddAverage(numbers) {
+    let sum = 0;
+    let count = 0;
 
-    let count=0;
-    for(let number of numbers){
-        
-        if(number % 2 ==1){
-            count+=number;
+    for (let number of numbers) {
+        if (number % 2 === 1) {
+            sum += number;   
+            count++;        
         }
     }
-    return count;
+
+    let average = sum / count;
+
+    return { summation: sum,
+             averageIt: average
+             };
 }
 
-const numbers=[12,13,14,15,16,17,18,19,20];
-const sum =oddAvarage(numbers);
-console.log("The summation is:", sum);
+const numbers = [12, 13, 14, 15, 16];
+const result = oddAverage(numbers);
+
+console.log("Odd numbers sum:", result.summation);
+console.log("Odd numbers average:", result.averageIt);
